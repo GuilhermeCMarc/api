@@ -11,7 +11,17 @@ const port = 3333;
  * PATCH  => Alteração específica
  */
 
-app.get("/users");
+// http://localhost:3333/users
+app.get("/", (req, res) => {
+  return res.json({ message: "Hello World - NLW04" });
+});
+
+// 1 param => Rota(Recurso API)
+// 2 param => req, res
+app.post("/", (req, res) => {
+  // Recebeu os dados para salvar
+  return res.json({ message: "Os dados foram salvos com sucesso!" });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
